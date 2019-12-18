@@ -3,6 +3,7 @@ import { withGoogleMap, withScriptjs, GoogleMap, Marker, InfoWindow } from "reac
 import * as comunaData from "../../data/chile_with_regions.json";
 import mapStyles from "../../data/mapStyles.js";
 import { Context } from "../store/appContext.js";
+import imgPin from "../../img/logoPin.png";
 
 function Map() {
 	const [selectedComuna, setSelectedComuna] = useState(null);
@@ -32,6 +33,20 @@ function Map() {
 								lng: Number(store.geomap.coords.longitude)
 							}}
 							defaultOptions={{ styles: mapStyles }}>
+							<Marker
+								position={{
+									lat: Number(store.geomap.coords.latitude),
+									lng: Number(store.geomap.coords.longitude)
+								}}
+								title={"AQUI ESTAS"}
+								icon={{
+									url: imgPin,
+									scaledSize: new google.maps.Size(50, 50),
+									origin: new google.maps.Point(0, 0),
+									anchor: new google.maps.Point(5, 50)
+								}}
+								onClick={() => {}}
+							/>
 							{comunaData.Metropolitana.map((comunaM, index) => (
 								<Marker
 									key={index}
@@ -43,9 +58,9 @@ function Map() {
 										setSelectedComuna(comunaM);
 									}}
 									/*icon={{
-                    url: `/skateboarding.svg`,
-                    scaledSize: new window.google.maps.Size(25, 25)
-                }} Para cambiar el icono del marcador*/
+                url: `/skateboarding.svg`,
+                scaledSize: new window.google.maps.Size(25, 25)
+            }} Para cambiar el icono del marcador*/
 								/>
 							))}
 							{selectedComuna && (

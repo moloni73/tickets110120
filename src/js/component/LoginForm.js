@@ -17,78 +17,75 @@ export const LoginForm = () => {
 			aria-hidden="true">
 			<div className="modal-dialog modal-lg modal-dialog-centered" role="document">
 				<div className="modal-content">
-					<div className="modal-header">
-						<h5 className="modal-title" id="exampleModalCenterTitle">
-							Selecciona tu metodo de ingreso
-						</h5>
-						<button type="button" className="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
 					<div className="modal-body">
 						{/*aca comienza el codigo insertado*/}
-						<div className="container mybackground">
-							<form>
-								<div className="row logrow">
-									<div className="vl">
-										<span className="vl-innertext">o</span>
-									</div>
+						<div className="container d-flex justify-content-center">
+							<div className="row">
+								<div className="mx-auto">
+									<div className="card card-signin my-5">
+										<div className="card-body">
+											<h5 className="card-title text-center">Iniciar Sesion</h5>
+											<form className="form-signin">
+												<div className="form-label-group">
+													<input
+														type="email"
+														id="inputEmail"
+														className="form-control"
+														placeholder="Email address"
+														required
+														autoFocus
+													/>
+													<label htmlFor="inputEmail">Email</label>
+												</div>
 
-									<div className="col logcol">
-										<a href="#" className="fb btn">
-											<FontAwesomeIcon icon={faFacebook} /> Ingresa con Facebook
-										</a>
-									</div>
+												<div className="form-label-group">
+													<input
+														type="password"
+														id="inputPassword"
+														className="form-control"
+														placeholder="Password"
+														required
+													/>
+													<label htmlFor="inputPassword">Password</label>
+												</div>
 
-									<div className="col logcol">
-										<div className="hide-md-lg">
-											<p>Ingresa con YoVoy!</p>
+												<div className="custom-control custom-checkbox mb-3">
+													<input
+														type="checkbox"
+														className="custom-control-input"
+														id="customCheck1"
+													/>
+													<label className="custom-control-label" htmlFor="customCheck1">
+														Recuerdame
+													</label>
+												</div>
+												<button
+													className="btn btn-lg btn-primary btn-block text-uppercase"
+													type="submit">
+													Ingresar
+												</button>
+												<div className="text-center">o</div>
+												<Link to="/register">
+													<button
+														className="btn btn-lg btn-success btn-block text-uppercase"
+														type="submit">
+														Registrarse
+													</button>
+												</Link>
+												<hr className="my-4" />
+												<button
+													className="btn btn-lg btn-facebook btn-block text-uppercase"
+													type="submit">
+													<i className="fab fa-facebook-f mr-2" /> Ingresar con Facebook
+												</button>
+											</form>
 										</div>
-
-										<input
-											className="input myinput"
-											type="text"
-											name="username"
-											placeholder="Email"
-											required
-										/>
-										<input
-											className="input myinput"
-											type="password"
-											name="password"
-											placeholder="Contraseña"
-											required
-										/>
-										<input
-											type="submit"
-											value="Login"
-											onClick={actions.changeUserStatus}
-											data-dismiss="modal"
-										/>
 									</div>
 								</div>
-							</form>
+							</div>
 						</div>
 						{/*aca termina*/}
 					</div>
-					{/*aca empieza*/}
-					<div className="bottom-container">
-						<div className="row">
-							<div className="col">
-								<Link to="/register">
-									<a style={{ color: "white" }} className="btn">
-										Registrate
-									</a>
-								</Link>
-							</div>
-							<div className="col">
-								<div style={{ color: "white" }} className="btn" data-toggle="modal">
-									¿Olvidaste tu Contraseña?
-								</div>
-							</div>
-						</div>
-					</div>
-					{/*aca termina*/}
 				</div>
 			</div>
 		</div>

@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { LoginButton } from "./loginbutton";
 import { DiaryButton } from "./DiaryButton";
+import logo from "./../../img/logo.png";
 
 import "../../styles/modal.scss";
 
@@ -9,7 +10,9 @@ export const Navbar = () => {
 	return (
 		<nav className="navbar navbar-light bg-light mb-3">
 			<Link to="/">
-				<span className="navbar-brand mb-0 h1">App Logo</span>
+				<a className="navbar-brand" href="#">
+					<img src={logo} width="150" height="60" alt="" />
+				</a>
 			</Link>
 
 			<DiaryButton />
