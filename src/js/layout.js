@@ -3,6 +3,9 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
+import { Fblogin } from "./component/loginFB.js";
+import { Mapapp } from "./component/mapApp.js";
+import { Footpag } from "./component/footer.js";
 import { Calendar } from "./views/calendar";
 import { Event } from "./views/event";
 import { EventsThumbnails } from "./views/eventsthumb";

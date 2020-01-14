@@ -8,6 +8,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 					password: "1234abc"
 				}
 			],
+			fbobject: [
+				{
+					isLoggedin: false,
+					name: "Carlos",
+					email: "170373"
+				}
+			],
 			geomap: {
 				locationState: "LOADING",
 				error: null,
@@ -298,6 +305,12 @@ const getState = ({ getStore, getActions, setStore }) => {
 					let newgeomap = { locationState: "ERROR", error: e.message };
 					setStore({ geomap: newgeomap });
 				}
+			},
+			capturefb: datafb => {
+				const nstore = getStore();
+				console.log(datafb);
+				const newfb = nstore.fbobject.fill(datafb);
+				setStore({ fbobject: newfb });
 			}
 		}
 	};
