@@ -4,17 +4,6 @@ import { Context } from "../store/appContext.js";
 import PropTypes from "prop-types";
 
 export default class Myfblogin extends Component {
-	state = {
-		isLoggedin: false
-	};
-
-	/*handleResponse = data => {
-		console.log(data);
-		this.setState({
-			isLoggedin: true
-		});
-	};*/
-
 	handleError = error => {
 		this.setState({ error });
 	};
